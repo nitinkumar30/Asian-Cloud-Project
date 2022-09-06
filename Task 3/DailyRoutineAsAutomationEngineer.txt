@@ -1,5 +1,0 @@
-Q. Describe your Daily routine as a Automation Engineer.
-
-As an Automation Engineer, I generally wake up by 8AM. We're having some training on Python which commences from 9AM for almost an hour. Then, after some personal care, my very first task is to check the status of pending bugs raised by me in JIRA. If it came back to me, I've to recheck the bug for success or failure. Then, I've to check any pending automation code left out by me. If there exist any, I'll put it into my Google Task. Then, we're having an internal Testing team call where we discuss the issues we're facing if any or any one-to-one talks with manager. After all these, I complete the JIRA stories & test scenarios. We've a status call in the end where we discuss with our onshore manager about our today's work & problems, if faced any. Then, this call marks the end of our job shift. After this, I generally work on my personal projects or learn Data Science. I'm also having some projects on same. Most of my projects are there in my github. I'm also active on LinkedIn during this time. My sleeping time is not fixed, but it's 1-2 AM max-to-max.
-
-
