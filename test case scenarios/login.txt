@@ -1,0 +1,9 @@
+// Test case scenarios for Login functionality
+
+
+SC_01 Validate the Email field is active and editable
+SC_02 Validate the password field is active and editable
+SC_03 Validate the Sign In button is active and clickable
+SC_04 Validate the Forgot Password link is active and clickable
+SC_05 Validate Remember me checkbox is active and clickable
+SC_06 Validate Register link is active and clickable
