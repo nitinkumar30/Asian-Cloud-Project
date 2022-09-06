@@ -1,0 +1,8 @@
+// Test case scenarios for Signup functionality
+
+
+SC_01 Validate the Email field is active and editable
+SC_02 Validate the Password field is active and editable
+SC_03 Validate the Confirm Password field is active and editable
+SC_04 Validate the Register button is active and clickable
+SC_05 Validate Back to Login link is active and clickable
