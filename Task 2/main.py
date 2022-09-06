@@ -77,7 +77,7 @@ def forgotPass():
         driver.find_element(By.XPATH, xpath_forgotPasswordLink).click()
         take_ss(r'screenshots/forgotPass/1.png')
         time.sleep(2)
-        driver.find_element(By.XPATH, xpath_username).send_keys(mail_new)
+        driver.find_element(By.XPATH, xpath_username).send_keys(mail)
         take_ss(r'screenshots/forgotPass/2.png')
         driver.find_element(By.XPATH, xpath_submitBtn).click()
         take_ss(r'screenshots/forgotPass/3.png')
