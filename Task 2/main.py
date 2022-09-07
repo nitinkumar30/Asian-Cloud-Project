@@ -9,6 +9,7 @@ from assets.variable import *  # Importing everything from variable.py
 from assets.xpaths import *  # Importing everything from xpaths.py
 
 # -------------------------------------
+
 # Automatically downloads chromedriver compatible with the current chrome browser
 opt = webdriver.ChromeOptions()
 opt.add_argument("--start-maximized")
@@ -17,6 +18,7 @@ driver = webdriver.Chrome(options=opt)
 
 
 # -------------------------------------
+
 def wait(time_in_s):
     time.sleep(time_in_s)
 
@@ -49,7 +51,7 @@ def isDisplayed(xpath):
     return rslt
 
 
-# -----------------------------------------------------------
+# -------------------------------------
 
 
 # opening the url
