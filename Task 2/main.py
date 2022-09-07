@@ -102,13 +102,13 @@ def forgotPass(username):
     try:
         clickBtn(xpath_forgotPasswordLink)
         take_ss(r'screenshots/forgotPass/1.png')
-        writeText(xpath_username, mail)
+        writeText(xpath_username, username)
         take_ss(r'screenshots/forgotPass/2.png')
         clickBtn(xpath_submitBtn)
         take_ss(r'screenshots/forgotPass/3.png')
 
         # Calling login method to login after confirming the mail id
-        login(mail, pswd)
+        # login(mail, pswd)
 
 
     except:
