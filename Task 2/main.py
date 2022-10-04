@@ -9,6 +9,7 @@ from assets.variable import *  # Importing everything from variable.py
 from assets.xpaths import *  # Importing everything from xpaths.py
 
 # -------------------------------------
+
 # Automatically downloads chromedriver compatible with the current chrome browser
 opt = webdriver.ChromeOptions()
 opt.add_argument("--start-maximized")
@@ -18,51 +19,76 @@ driver = webdriver.Chrome(options=opt)
 
 # -------------------------------------
 
+def wait(time_in_s):
+    time.sleep(time_in_s)
+
 
 def take_ss(full_path):
+    wait(2)
     myScreenshot = pyautogui.screenshot()
     myScreenshot.save(full_path)
-    time.sleep(2)
+
+
+def clickBtn(xpath):
+    driver.find_element(By.XPATH, xpath).click()
+    wait(2)
+
+
+def clearText(xpath):
+    driver.find_element(By.XPATH, xpath).clear()
+    wait(2)
+
+
+def writeText(xpath, value):
+    clearText(xpath)
+    driver.find_element(By.XPATH, xpath).send_keys(value)
+    wait(2)
+
+
+def isDisplayed(xpath):
+    rslt = driver.find_element(By.XPATH, xpath).is_displayed()
+    wait(2)
+    return rslt
+
+
+# -------------------------------------
 
 
 # opening the url
 driver.get(loginUrl)
-time.sleep(5)
+wait(5)
 take_ss(r'screenshots/homepage.png')
 
 
 # Login function to perform login functionality
-def login():
+def login(username, password):
     try:
-        driver.find_element(By.XPATH, xpath_username).clear()
-        driver.find_element(By.XPATH, xpath_username).send_keys(mail)
+        writeText(xpath_username, username)
         take_ss(r'screenshots/login/1.png')
-        driver.find_element(By.XPATH, xpath_password).clear()
-        driver.find_element(By.XPATH, xpath_password).send_keys(pswd)
+        writeText(xpath_password, password)
         take_ss(r'screenshots/login/2.png')
-        driver.find_element(By.XPATH, xpath_rememberMeLink).click()
+        clickBtn(xpath_rememberMeLink)
         take_ss(r'screenshots/login/3.png')
-        driver.find_element(By.XPATH, xpath_loginBtn).click()
+        wait(2)
+        clickBtn(xpath_loginBtn)
         take_ss(r'screenshots/login/4.png')
 
     except:
         print('Exception occurred', )
 
 
-# Signup function to perform Registeration functionality
-def signup():
+# Signup function to perform Registration functionality
+def signup(mail, pswd):
     try:
-        driver.find_element(By.XPATH, xpath_registerLink).click()
+        clickBtn(xpath_registerLink)
         take_ss(r'screenshots/signup/1.png')
-        time.sleep(2)
-        driver.find_element(By.XPATH, xpath_mail).send_keys(mail_new)
+        writeText(xpath_mail, mail)
         take_ss(r'screenshots/signup/2.png')
-        driver.find_element(By.XPATH, xpath_password).send_keys(pswd_new)
+        writeText(xpath_password, pswd)
         take_ss(r'screenshots/signup/3.png')
-        driver.find_element(By.XPATH, xpath_passwordConfirm).send_keys(pswd_new)
+        writeText(xpath_passwordConfirm, pswd_new)
         take_ss(r'screenshots/signup/4.png')
-        print("The enabled condition of Back to Login link is {}.".format(
-            driver.find_element(By.XPATH, xpath_backToLoginBtn).is_displayed()))
+        print("The enabled condition of Back to Login link is {}.".format(isDisplayed(xpath_backToLoginBtn)))
         driver.find_element(By.XPATH, xpath_registerBtn).click()
         take_ss(r'screenshots/signup/5.png')
 
@@ -72,17 +98,18 @@ def signup():
 
 # forgot Password function to perform password forgetting functionality
 # It'll call the login method just after submitting
-def forgotPass():
+def forgotPass(username):
     try:
-        driver.find_element(By.XPATH, xpath_forgotPasswordLink).click()
+        clickBtn(xpath_forgotPasswordLink)
         take_ss(r'screenshots/forgotPass/1.png')
-        time.sleep(2)
-        driver.find_element(By.XPATH, xpath_username).send_keys(mail)
+        writeText(xpath_username, username)
         take_ss(r'screenshots/forgotPass/2.png')
-        driver.find_element(By.XPATH, xpath_submitBtn).click()
+        clickBtn(xpath_submitBtn)
         take_ss(r'screenshots/forgotPass/3.png')
 
-        login()  # Calling login method to login after confirming the mail id
+        # Calling login method to login after confirming the mail id
+        # login(mail, pswd)
+
 
     except:
         print("Exception occurred.")
@@ -90,9 +117,9 @@ def forgotPass():
 
 # To check the functionalities:-
 
-# login()  # Login Functionality
-# signup()  # Signup functionality
-forgotPass() # Forgot password functionality
+login(mail, pswd)  # Login Functionality
+# signup(mail_new, pswd_new)  # Signup functionality
+# forgotPass(mail)  # Forgot password functionality
 
-time.sleep(5)
+wait(5)
 driver.close()
