@@ -1,14 +1,14 @@
 # Asian Cloud Skills Assessment
 
-> This is the skills assessment sent to me by Asian Cloud
-> I've merged all the tasks to be completed,i.e. TASK1, TASK2, TASK3
-> Applied for the post of Software Quality Assurance Engineer with ~2 YOE
+> This is the skills assessment sent to me by Asian Cloud  
+> I've merged all the tasks to be completed,i.e. TASK1, TASK2 <!-- , TASK3  
+> Applied for the post of Software Quality Assurance Engineer with ~2 YOE --> 
 
 # Tasks
 
 1. [Task 1](https://github.com/nitinkumar30/Asian-Cloud-Project/tree/main/Task%201)
 2. [Task 2](https://github.com/nitinkumar30/Asian-Cloud-Project/tree/main/Task%202)
-3. [Task 3](https://github.com/nitinkumar30/Asian-Cloud-Project/tree/main/Task%203)
+<!-- 3. [Task 3](https://github.com/nitinkumar30/Asian-Cloud-Project/tree/main/Task%203) -->
 
 # Modules used
 
